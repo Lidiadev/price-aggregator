@@ -1,4 +1,5 @@
 ﻿using PriceAggregator.API.Services;
+using PriceAggregator.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddSwaggerGen();
 
 // Register services and repositories here
 builder.Services.AddScoped<IPriceService, PriceService>();
+builder.Services.AddScoped<IPriceAggregatorService, PriceAggregatorService>();
+builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 
 var app = builder.Build();
 

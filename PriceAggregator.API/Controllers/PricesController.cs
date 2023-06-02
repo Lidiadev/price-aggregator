@@ -20,13 +20,13 @@ public class PricesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<double>> GetAggregatedPrice(string financialInstrument, DateTime time)
     {
-        return await _priceService.GetAggregatedPrice(time);
+        return await _priceService.GetAggregatedPrice(financialInstrument, time);
     }
     
     [HttpGet("range")]
-    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(DateTime start, DateTime end)
+    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(string financialInstrument, DateTime start, DateTime end)
     {
-        return await _priceService.GetPersistedPrices(start, end);
+        return await _priceService.GetPersistedPrices(financialInstrument, start, end);
     }
 }
 

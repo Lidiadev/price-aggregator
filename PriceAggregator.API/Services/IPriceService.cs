@@ -4,6 +4,7 @@ namespace PriceAggregator.API.Services;
 
 public interface IPriceService
 {
-    Task<double> GetAggregatedPrice(DateTime time);
-    Task<List<AggregatedPriceModel>> GetPersistedPrices(DateTime start, DateTime end);
+    Task<double> GetAggregatedPrice(string financialInstrument, DateTime time);
+    
+    Task<List<AggregatedPriceModel>> GetPersistedPrices(string financialInstrument, DateTime start, DateTime end);
 }
