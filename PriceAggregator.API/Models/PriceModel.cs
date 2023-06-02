@@ -1,4 +1,4 @@
-﻿namespace PriceAggregator.API;
+﻿namespace PriceAggregator.API.Models;
 
 public class PriceModel
 {
