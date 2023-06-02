@@ -5,7 +5,7 @@ using PriceAggregator.API.Services;
 namespace PriceAggregator.API.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class PricesController : ControllerBase
 {
     private readonly IPriceService _priceService;
@@ -17,8 +17,8 @@ public class PricesController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("{time:datetime}")]
-    public async Task<ActionResult<double>> GetAggregatedPrice(DateTime time)
+    [HttpGet]
+    public async Task<ActionResult<double>> GetAggregatedPrice(string financialInstrument, DateTime time)
     {
         return await _priceService.GetAggregatedPrice(time);
     }
