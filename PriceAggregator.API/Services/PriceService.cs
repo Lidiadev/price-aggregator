@@ -20,21 +20,25 @@ public class PriceService : IPriceService
     {
         var aggregatedPrice = await _priceAggregatorService.AggregatePrice(financialInstrument, time);
         
-        var newPrice = new PriceModel { Time = time, Price = aggregatedPrice };
+        var newPrice = new PriceData { Time = time, Price = aggregatedPrice };
         await _priceRepository.SavePrice(newPrice);
 
         return aggregatedPrice;
     }
 
-    public Task<List<AggregatedPriceModel>> GetPersistedPrices(string financialInstrument, DateTime start, DateTime end)
+    public async Task<List<AggregatedPriceModel>> GetPersistedPrices(
+        string financialInstrument, 
+        DateTime start,
+        DateTime end)
     {
-        return Task.FromResult(new List<AggregatedPriceModel>
-        {
-            new()
+        var prices = await _priceRepository.GetPrices(start, end);
+
+        return prices
+            .Select(p => new AggregatedPriceModel
             {
-                AggregatedPrice = 10,
-                Time = DateTime.Now
-            }
-        });
+                AggregatedPrice = p.Price,
+                Time = p.Time
+            })
+            .ToList();
     }
 }

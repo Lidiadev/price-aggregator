@@ -1,4 +1,5 @@
 ﻿using PriceAggregator.API.Services;
+﻿using Microsoft.EntityFrameworkCore;
 using PriceAggregator.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IPriceService, PriceService>();
 builder.Services.AddScoped<IPriceAggregatorService, PriceAggregatorService>();
 builder.Services.AddScoped<IPriceRepository, PriceRepository>();
+
+// Configure the in-memory database
+builder.Services.AddDbContext<FinancialInstrumentsDbContext>(options =>
+    options.UseInMemoryDatabase(databaseName: "FinancialInstrumentInMemoryDatabase"));
 
 var app = builder.Build();
 

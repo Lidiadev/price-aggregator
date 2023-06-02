@@ -5,7 +5,7 @@ using PriceAggregator.API.Services;
 namespace PriceAggregator.API.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 public class PricesController : ControllerBase
 {
     private readonly IPriceService _priceService;
@@ -23,10 +23,10 @@ public class PricesController : ControllerBase
         return await _priceService.GetAggregatedPrice(financialInstrument, time);
     }
     
-    [HttpGet("range")]
-    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(string financialInstrument, DateTime start, DateTime end)
+    [HttpGet("persisted")]
+    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(string financialInstrument, DateTime startTime, DateTime endTime)
     {
-        return await _priceService.GetPersistedPrices(financialInstrument, start, end);
+        return await _priceService.GetPersistedPrices(financialInstrument, startTime, endTime);
     }
 }
 
