@@ -1,5 +1,5 @@
 ﻿using PriceAggregator.API.Services;
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PriceAggregator.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
