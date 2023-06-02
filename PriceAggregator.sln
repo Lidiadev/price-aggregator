@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API", "Pric
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.IntegrationTests", "PriceAggregator.IntegrationTests\PriceAggregator.IntegrationTests.csproj", "{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{838949D0-6419-4983-8EE4-6A12F65661AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleCI", ".circleCI", "{B2B7A1C4-88C9-4FCD-8A3C-DCB28CB4A320}"
+	ProjectSection(SolutionItems) = preProject
+		.circleci\config.yml = .circleci\config.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8138381C-B5EE-4028-B803-468EC61929D9}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2B7A1C4-88C9-4FCD-8A3C-DCB28CB4A320} = {838949D0-6419-4983-8EE4-6A12F65661AA}
 	EndGlobalSection
 EndGlobal
