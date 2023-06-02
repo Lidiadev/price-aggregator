@@ -13,7 +13,6 @@ public class PricesController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<PriceModel> Get()
     {
         return new List<PriceModel>
