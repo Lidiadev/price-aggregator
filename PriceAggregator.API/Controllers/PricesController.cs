@@ -29,7 +29,9 @@ public class PricesController : ControllerBase
                 return BadRequest(ModelState);
             }
             
-            return await _priceService.GetAggregatedPrice(instrument, time);
+            var aggregatedPrice = await _priceService.GetAggregatedPrice(instrument, time);
+
+            return aggregatedPrice.AggregatedPrice;
         }
         catch (Exception ex)
         {

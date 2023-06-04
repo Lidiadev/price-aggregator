@@ -20,14 +20,14 @@ public class PriceService : IPriceService
         _priceSources = priceSources.ToList();
     }
     
-    public async Task<double> GetAggregatedPrice(string instrument, DateTime time)
+    public async Task<AggregatedPriceModel> GetAggregatedPrice(string instrument, DateTime time)
     {
         time = time.FormatToHourAccuracy();
         var savedPrice = await _priceRepository.GetPrice(instrument, time);
 
         if (savedPrice != 0)
         {
-            return savedPrice;
+            return new AggregatedPriceModel { AggregatedPrice = savedPrice };
         }
         
         var aggregatedPrice = await _priceAggregator.AggregatePrice(_priceSources, instrument, time);
@@ -38,7 +38,7 @@ public class PriceService : IPriceService
             await _priceRepository.SavePrice(newPrice);
         }
         
-        return aggregatedPrice;
+        return new AggregatedPriceModel { AggregatedPrice = aggregatedPrice };
     }
 
     public async Task<List<AggregatedPriceModel>> GetPersistedPrices(
