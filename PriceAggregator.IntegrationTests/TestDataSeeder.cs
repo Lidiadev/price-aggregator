@@ -9,11 +9,12 @@ public static class TestDataSeeder
     {
         var prices = new[]
         {
-            new PriceData { Time = new DateTime(2023, 6, 1, 4, 0, 0), Price = 100 },
-            new PriceData { Time = new DateTime(2023, 6, 1, 5, 0, 0), Price = 110 },
-            new PriceData { Time = new DateTime(2023, 6, 1, 12, 0, 0), Price = 120 },
-            new PriceData { Time = new DateTime(2023, 6, 1, 13, 0, 0), Price = 130 },
-            new PriceData { Time = new DateTime(2023, 6, 1, 14, 1, 0), Price = 140 },
+            new PriceData ("btcusd", new DateTime(2023, 6, 1, 4, 0, 0),  100),
+            new PriceData ("btcusd", new DateTime(2023, 6, 1, 5, 0, 0),  110),
+            new PriceData ("btcusd", new DateTime(2023, 6, 1, 12, 0, 0),  120),
+            new PriceData ("btcusd", new DateTime(2023, 6, 1, 12, 0, 0),  130),
+            new PriceData ("btceur", new DateTime(2023, 6, 1, 4, 0, 0),  140),
+            new PriceData ("btceur", new DateTime(2023, 6, 1, 4, 0, 0),  150),
         };
 
         dbContext.Prices.AddRange(prices);

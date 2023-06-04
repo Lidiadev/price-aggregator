@@ -4,9 +4,9 @@ namespace PriceAggregator.API.Repository;
 
 public interface IPriceRepository
 {
-    Task<decimal> GetPrice(DateTime time);
+    Task<decimal> GetPrice(string instrument, DateTime time);
     
-    Task<IReadOnlyList<PriceData>> GetPrices(DateTime startTime, DateTime endTime);
+    Task<IReadOnlyList<PriceData>> GetPrices(string instrument, DateTime startTime, DateTime endTime);
     
     Task SavePrice(PriceData price);
 }

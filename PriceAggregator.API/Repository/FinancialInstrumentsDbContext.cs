@@ -14,5 +14,11 @@ public class FinancialInstrumentsDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<PriceData>()
+            .HasKey(p => p.Id);
+        
+        modelBuilder.Entity<PriceData>()
+            .Property(p => p.Id)
+            .ValueGeneratedOnAdd();
     }
 }

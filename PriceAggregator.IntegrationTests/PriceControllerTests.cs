@@ -60,7 +60,7 @@ public class PriceControllerTests : IClassFixture<WebApplicationFactory<Program>
         TestDataSeeder.PopulateDatabase(dbContext);
 
         // Act
-        var response = await client.GetAsync($"/api/v1/prices/persisted?financialInstrument=test&startTime={startTime:yyyy-MM-ddTHH:mm:ss}&endTime={endTime:yyyy-MM-ddTHH:mm:ss}");
+        var response = await client.GetAsync($"/api/v1/prices/persisted?financialInstrument=btcusd&startTime={startTime:yyyy-MM-ddTHH:mm:ss}&endTime={endTime:yyyy-MM-ddTHH:mm:ss}");
 
         // Assert
         response.EnsureSuccessStatusCode();
