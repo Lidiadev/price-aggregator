@@ -1,5 +1,7 @@
 ﻿using PriceAggregator.API.Services;
 using Microsoft.EntityFrameworkCore;
+using PriceAggregator.API.Configurations;
+using PriceAggregator.API.Extensions;
 using PriceAggregator.API.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,10 +13,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register services and repositories here
+// Register configuration
+builder.Services.Configure<BitstampConfiguration>(builder.Configuration.GetSection(nameof(BitstampConfiguration)));
+
+// Register http clients
+builder.Services.AddBitstampHttpClient(builder.Configuration.GetSection(nameof(BitstampConfiguration)).Get<BitstampConfiguration>());
+
+// Register services and repositories 
 builder.Services.AddScoped<IPriceService, PriceService>();
-builder.Services.AddScoped<IPriceAggregatorService, PriceAggregatorService>();
+builder.Services.AddScoped<IPriceAggregator, PriceAggregator.API.Services.PriceAggregator>();
 builder.Services.AddScoped<IPriceRepository, PriceRepository>();
+builder.Services.AddScoped<IPriceAggregationStrategy, PriceAverageAggregationStrategy>();
 
 // Configure the in-memory database
 builder.Services.AddDbContext<FinancialInstrumentsDbContext>(options =>

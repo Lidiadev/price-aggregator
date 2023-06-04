@@ -6,19 +6,22 @@ namespace PriceAggregator.API.Services;
 public class PriceService : IPriceService
 {
     private readonly IPriceRepository _priceRepository;
-    private readonly IPriceAggregatorService _priceAggregatorService;
+    private readonly IPriceAggregator _priceAggregator;
+    private readonly IReadOnlyList<IPriceSource> _priceSources;
 
     public PriceService(
         IPriceRepository priceRepository, 
-        IPriceAggregatorService priceAggregatorService)
+        IPriceAggregator priceAggregator,
+        IEnumerable<IPriceSource> priceSources)
     {
         _priceRepository = priceRepository;
-        _priceAggregatorService = priceAggregatorService;
+        _priceAggregator = priceAggregator;
+        _priceSources = priceSources.ToList();
     }
     
-    public async Task<double> GetAggregatedPrice(string financialInstrument, DateTime time)
+    public async Task<decimal> GetAggregatedPrice(string financialInstrument, DateTime time)
     {
-        var aggregatedPrice = await _priceAggregatorService.AggregatePrice(financialInstrument, time);
+        var aggregatedPrice = await _priceAggregator.AggregatePrice(_priceSources, financialInstrument, time);
         
         var newPrice = new PriceData { Time = time, Price = aggregatedPrice };
         await _priceRepository.SavePrice(newPrice);

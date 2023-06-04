@@ -18,7 +18,7 @@ public class PricesController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<double>> GetAggregatedPrice(string financialInstrument, DateTime time)
+    public async Task<ActionResult<decimal>> GetAggregatedPrice(string financialInstrument, DateTime time)
     {
         return await _priceService.GetAggregatedPrice(financialInstrument, time);
     }
