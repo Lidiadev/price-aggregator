@@ -33,12 +33,10 @@ public class BitfinexService : IPriceSource
                     _bitfinexConfiguration.InstrumentPriceEndpointUri(instrument, Step, Limit, time));
             response.EnsureSuccessStatusCode();
 
-            var testcontent = await response.Content.ReadAsStringAsync();
-
-            var apiResponse = JsonSerializer.Deserialize<List<CandleData>>(await response.Content.ReadAsStringAsync());
+            var apiResponse = JsonSerializer.Deserialize<List<List<object>>>(await response.Content.ReadAsStringAsync());
 
             return apiResponse is { Count: > 0 }
-                ? PriceSourceResponse.Success(apiResponse.FirstOrDefault().Close)
+                ? PriceSourceResponse.Success(double.Parse(apiResponse.FirstOrDefault()[1].ToString()))
                 : PriceSourceResponse.Failure();
         }
         catch (Exception ex)

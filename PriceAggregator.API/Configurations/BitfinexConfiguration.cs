@@ -6,9 +6,9 @@ public class BitfinexConfiguration : ExternalServiceConfiguration
 {
     public string InstrumentPriceEndpointUri(string instrument, string step, int limit, DateTime start)
     {
-        var end = start.Date.AddHours(1);
+        var end = start.AddHours(1).FormatToHourAccuracy();
         
-        return string.Format(InstrumentPriceEndpoint, step, instrument, start.ToUnixTimestamp(), end.ToUnixTimestamp(), limit);
+        return string.Format(InstrumentPriceEndpoint, step, instrument.ToUpper(), start.ToMillisecondsUnixTimestamp(), end.ToMillisecondsUnixTimestamp(), limit);
     }
 
     public override string HttpClientName => "BitfinexHttpClient";

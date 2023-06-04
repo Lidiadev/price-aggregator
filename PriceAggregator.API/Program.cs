@@ -14,8 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register configuration
-builder.Services.Configure<BitstampConfiguration>(builder.Configuration.GetSection(nameof(BitstampConfiguration)));
-builder.Services.Configure<BitfinexConfiguration>(builder.Configuration.GetSection(nameof(BitfinexConfiguration)));
+ builder.Services.Configure<BitstampConfiguration>(builder.Configuration.GetSection(nameof(BitstampConfiguration)));
+ builder.Services.Configure<BitfinexConfiguration>(builder.Configuration.GetSection(nameof(BitfinexConfiguration)));
 
 // Register http clients
 builder.Services.AddBitstampHttpClient(builder.Configuration.GetSection(nameof(BitstampConfiguration)).Get<BitstampConfiguration>());

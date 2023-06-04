@@ -34,7 +34,7 @@ public class PriceControllerTests : IClassFixture<WebApplicationFactory<Program>
     {
         // Arrange
         var client = _factory.CreateClient();
-        var time = new DateTime(2023, 1, 1, 0, 0, 0);
+        var time = new DateTime(2023, 1, 1, 12, 14, 15);
 
         // Act
         var response = await client.GetAsync($"/api/v1/prices/btcusd/{time:yyyy-MM-ddTHH:mm:ss}");
