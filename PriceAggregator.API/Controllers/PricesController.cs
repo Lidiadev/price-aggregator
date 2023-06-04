@@ -3,7 +3,6 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using PriceAggregator.API.Models;
 using PriceAggregator.API.Services;
-using PriceAggregator.API.ViewModels;
 
 namespace PriceAggregator.API.Controllers;
 
@@ -21,7 +20,7 @@ public class PricesController : ControllerBase
     }
 
     [HttpGet("{instrument}/{time:datetime}")]
-    public async Task<ActionResult<decimal>> GetAggregatedPrice(string instrument, DateTime time)
+    public async Task<ActionResult<double>> GetAggregatedPrice(string instrument, DateTime time)
     {
         try
         {

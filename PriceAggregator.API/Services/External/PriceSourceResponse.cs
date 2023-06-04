@@ -2,11 +2,11 @@ namespace PriceAggregator.API.Services.External;
 
 public class PriceSourceResponse
 {
-    public decimal Price { get; }
+    public double Price { get; }
     
     public bool IsSuccessful { get; }
 
-    private PriceSourceResponse(decimal price)
+    private PriceSourceResponse(double price)
     {
         Price = price;
         IsSuccessful = true;
@@ -17,7 +17,7 @@ public class PriceSourceResponse
         IsSuccessful = isSuccessful;
     }
 
-    public static PriceSourceResponse Success(decimal price) =>
+    public static PriceSourceResponse Success(double price) =>
         new(price);
 
     public static PriceSourceResponse Failure() =>

@@ -2,7 +2,7 @@ namespace PriceAggregator.API.Services;
 
 public class PriceAverageAggregationStrategy : IPriceAggregationStrategy
 {
-    public decimal AggregatePrices(IReadOnlyList<decimal> prices) =>
+    public double AggregatePrices(IReadOnlyList<double> prices) =>
         prices.Count > 0 
             ? prices.Average() 
             : 0;

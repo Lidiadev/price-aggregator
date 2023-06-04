@@ -6,20 +6,17 @@ namespace PriceAggregator.API.Services.External.Bitstamp;
 public class CandleData
 {
     [DataMember(Name = "close")]
-    public decimal Close { get; set; }
+    public double Close { get; set; }
 
     [DataMember(Name = "high")]
-    public decimal High { get; set; }
+    public double High { get; set; }
 
     [DataMember(Name = "low")]
-    public decimal Low { get; set; }
+    public double Low { get; set; }
 
     [DataMember(Name = "open")]
-    public decimal Open { get; set; }
+    public double Open { get; set; }
 
     [DataMember(Name = "timestamp")]
     public string Timestamp { get; set; }
-
-    [DataMember(Name = "volume")]
-    public string Volume { get; set; }
 }

@@ -19,7 +19,7 @@ public class PriceService : IPriceService
         _priceSources = priceSources.ToList();
     }
     
-    public async Task<decimal> GetAggregatedPrice(string instrument, DateTime time)
+    public async Task<double> GetAggregatedPrice(string instrument, DateTime time)
     {
         var aggregatedPrice = await _priceAggregator.AggregatePrice(_priceSources, instrument, time);
         

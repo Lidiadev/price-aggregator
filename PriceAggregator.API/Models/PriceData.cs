@@ -8,9 +8,9 @@ public class PriceData
     
     public DateTime Time { get; set; }
     
-    public decimal Price { get; set; }
+    public double Price { get; set; }
 
-    public PriceData(string instrument, DateTime time, decimal price)
+    public PriceData(string instrument, DateTime time, double price)
     {
         Instrument = instrument.ToLower();
         Time = time;

@@ -12,7 +12,7 @@ public class PriceRepository : IPriceRepository
         _dbContext = dbContext;
     }
 
-    public async Task<decimal> GetPrice(string instrument, DateTime time)
+    public async Task<double> GetPrice(string instrument, DateTime time)
         => await _dbContext.Prices
             .Where(p => p.Instrument == instrument && p.Time == time)
             .Select(p => p.Price)

@@ -11,7 +11,7 @@ public class PriceAggregator : IPriceAggregator
         _aggregationStrategy = aggregationStrategy;
     }
     
-    public async Task<decimal> AggregatePrice(IReadOnlyList<IPriceSource> priceSources, string financialInstrument, DateTime time)
+    public async Task<double> AggregatePrice(IReadOnlyList<IPriceSource> priceSources, string financialInstrument, DateTime time)
     {
         var priceTasks = new List<Task<PriceSourceResponse>>();
         
