@@ -1,7 +1,9 @@
 namespace PriceAggregator.API.Configurations;
 
-public class ExternalServiceConfiguration
+public abstract class ExternalServiceConfiguration
 {
+    public abstract string HttpClientName { get; } 
+    
     public string ServiceBaseUrl { get; set; }
 
     public string InstrumentPriceEndpoint { get; set; }

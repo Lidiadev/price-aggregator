@@ -10,4 +10,6 @@ public class BitfinexConfiguration : ExternalServiceConfiguration
         
         return string.Format(InstrumentPriceEndpoint, step, instrument, start.ToUnixTimestamp(), end.ToUnixTimestamp(), limit);
     }
+
+    public override string HttpClientName => "BitfinexHttpClient";
 }
