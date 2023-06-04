@@ -4,5 +4,5 @@ namespace PriceAggregator.API.Services;
 
 public interface IPriceSource
 {
-    Task<PriceSourceResponse> GetPrice(string financialInstrument, DateTime time);
+    Task<PriceSourceResponse> GetPrice(string instrument, DateTime time);
 }

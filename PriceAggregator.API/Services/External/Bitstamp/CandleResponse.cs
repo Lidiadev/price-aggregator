@@ -1,13 +1,12 @@
-using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PriceAggregator.API.Services.External.Bitstamp;
 
-[DataContract]
 public class CandleResponse
 {
-    [DataMember(Name = "ohlc")]
+    [JsonPropertyName("ohlc")]
     public List<CandleData> Candles { get; set; }
 
-    [DataMember(Name = "pair")]
+    [JsonPropertyName("pair")]
     public string Pair { get; set; }
 }

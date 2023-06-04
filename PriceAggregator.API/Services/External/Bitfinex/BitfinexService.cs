@@ -25,12 +25,12 @@ public class BitfinexService : IPriceSource
         _logger = logger;
     }
 
-    public async Task<PriceSourceResponse> GetPrice(string financialInstrument, DateTime time)
+    public async Task<PriceSourceResponse> GetPrice(string instrument, DateTime time)
     {
         try
         {
             var response = await _httpClient.GetAsync(
-                    _bitfinexConfiguration.InstrumentPriceEndpointUri(financialInstrument, Step, Limit, time));
+                    _bitfinexConfiguration.InstrumentPriceEndpointUri(instrument, Step, Limit, time));
             response.EnsureSuccessStatusCode();
 
             var testcontent = await response.Content.ReadAsStringAsync();

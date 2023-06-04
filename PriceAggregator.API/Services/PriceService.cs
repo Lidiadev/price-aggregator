@@ -1,3 +1,4 @@
+using PriceAggregator.API.Extensions;
 using PriceAggregator.API.Models;
 using PriceAggregator.API.Repository;
 
@@ -21,11 +22,22 @@ public class PriceService : IPriceService
     
     public async Task<double> GetAggregatedPrice(string instrument, DateTime time)
     {
-        var aggregatedPrice = await _priceAggregator.AggregatePrice(_priceSources, instrument, time);
-        
-        var newPrice = new PriceData(instrument, time, aggregatedPrice);
-        await _priceRepository.SavePrice(newPrice);
+        time = time.FormatToHourAccuracy();
+        var savedPrice = await _priceRepository.GetPrice(instrument, time);
 
+        if (savedPrice != 0)
+        {
+            return savedPrice;
+        }
+        
+        var aggregatedPrice = await _priceAggregator.AggregatePrice(_priceSources, instrument, time);
+
+        if (aggregatedPrice != 0)
+        {
+            var newPrice = new PriceData(instrument, time, aggregatedPrice);
+            await _priceRepository.SavePrice(newPrice);
+        }
+        
         return aggregatedPrice;
     }
 
@@ -34,6 +46,9 @@ public class PriceService : IPriceService
         DateTime start,
         DateTime end)
     {
+        start = start.FormatToHourAccuracy();
+        end = end.FormatToHourAccuracy();
+        
         var prices = await _priceRepository.GetPrices(instrument, start, end);
 
         return prices

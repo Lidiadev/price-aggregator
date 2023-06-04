@@ -1,22 +1,25 @@
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PriceAggregator.API.Services.External.Bitstamp;
 
-[DataContract]
 public class CandleData
 {
-    [DataMember(Name = "close")]
-    public double Close { get; set; }
+    [JsonPropertyName("close")]
+    public string Close { get; set; }
 
-    [DataMember(Name = "high")]
-    public double High { get; set; }
+    [JsonPropertyName("high")]
+    public string High { get; set; }
 
-    [DataMember(Name = "low")]
-    public double Low { get; set; }
+    [JsonPropertyName("low")]
+    public string Low { get; set; }
 
-    [DataMember(Name = "open")]
-    public double Open { get; set; }
+    [JsonPropertyName("open")]
+    public string Open { get; set; }
 
-    [DataMember(Name = "timestamp")]
+    [JsonPropertyName("timestamp")]
     public string Timestamp { get; set; }
+
+    [JsonPropertyName("volume")]
+    public string Volume { get; set; }
 }

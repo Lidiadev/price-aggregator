@@ -24,19 +24,21 @@ public class BitstampService : IPriceSource
         _bitstampConfiguration = EnsureArg.IsNotNull(bitstampConfiguration.Value, nameof(BitstampConfiguration));
     }
 
-    public async Task<PriceSourceResponse> GetPrice(string financialInstrument, DateTime time)
+    public async Task<PriceSourceResponse> GetPrice(string instrument, DateTime time)
     {
         try
         {
-            var response = await _httpClient.GetAsync(_bitstampConfiguration.InstrumentPriceEndpointUri(financialInstrument, Step, Limit, time));
+            var response = await _httpClient.GetAsync(_bitstampConfiguration.InstrumentPriceEndpointUri(instrument, Step, Limit, time));
             response.EnsureSuccessStatusCode();
 
-            //var testcontent = await response.Content.ReadAsStringAsync();
-                
-            var apiResponse = JsonSerializer.Deserialize<BitstampResponse>(await response.Content.ReadAsStringAsync());
+            var apiResponse = JsonSerializer.Deserialize<BitstampResponse>(await response.Content.ReadAsStringAsync(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
 
             return apiResponse is { Data: { Candles.Count: > 0 } }
-                ? PriceSourceResponse.Success(apiResponse.Data.Candles.FirstOrDefault().Close) 
+                ? PriceSourceResponse.Success(double.Parse(apiResponse.Data.Candles.FirstOrDefault().Close)) 
                 : PriceSourceResponse.Failure();
         }
         catch (Exception ex)
