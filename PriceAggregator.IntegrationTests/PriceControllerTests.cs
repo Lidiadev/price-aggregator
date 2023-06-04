@@ -37,7 +37,7 @@ public class PriceControllerTests : IClassFixture<WebApplicationFactory<Program>
         var time = new DateTime(2023, 1, 1, 0, 0, 0);
 
         // Act
-        var response = await client.GetAsync($"/api/v1/prices?financialInstrument=btcusd&time={time:yyyy-MM-ddTHH:mm:ss}");
+        var response = await client.GetAsync($"/api/v1/prices/btcusd/{time:yyyy-MM-ddTHH:mm:ss}");
 
         // Assert
         response.EnsureSuccessStatusCode();
@@ -60,7 +60,7 @@ public class PriceControllerTests : IClassFixture<WebApplicationFactory<Program>
         TestDataSeeder.PopulateDatabase(dbContext);
 
         // Act
-        var response = await client.GetAsync($"/api/v1/prices/persisted?financialInstrument=btcusd&startTime={startTime:yyyy-MM-ddTHH:mm:ss}&endTime={endTime:yyyy-MM-ddTHH:mm:ss}");
+        var response = await client.GetAsync($"/api/v1/prices/persisted/btcusd?startTime={startTime:yyyy-MM-ddTHH:mm:ss}&endTime={endTime:yyyy-MM-ddTHH:mm:ss}");
 
         // Assert
         response.EnsureSuccessStatusCode();

@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
 using PriceAggregator.API.Models;
 using PriceAggregator.API.Services;
+using PriceAggregator.API.ViewModels;
 
 namespace PriceAggregator.API.Controllers;
 
@@ -17,16 +20,45 @@ public class PricesController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<decimal>> GetAggregatedPrice(string financialInstrument, DateTime time)
+    [HttpGet("{instrument}/{time:datetime}")]
+    public async Task<ActionResult<decimal>> GetAggregatedPrice(string instrument, DateTime time)
     {
-        return await _priceService.GetAggregatedPrice(financialInstrument, time);
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
+            return await _priceService.GetAggregatedPrice(instrument, time);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
     }
     
-    [HttpGet("persisted")]
-    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(string financialInstrument, DateTime startTime, DateTime endTime)
+    [HttpGet("persisted/{instrument}")]
+    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(
+        string instrument, 
+        [Required] DateTime startTime, 
+        [Required] DateTime endTime)
     {
-        return await _priceService.GetPersistedPrices(financialInstrument, startTime, endTime);
+        try
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            
+            return await _priceService.GetPersistedPrices(instrument, startTime, endTime);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            return StatusCode((int)HttpStatusCode.InternalServerError);
+        }
     }
 }
 
