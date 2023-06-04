@@ -15,9 +15,11 @@ builder.Services.AddSwaggerGen();
 
 // Register configuration
 builder.Services.Configure<BitstampConfiguration>(builder.Configuration.GetSection(nameof(BitstampConfiguration)));
+builder.Services.Configure<BitfinexConfiguration>(builder.Configuration.GetSection(nameof(BitfinexConfiguration)));
 
 // Register http clients
 builder.Services.AddBitstampHttpClient(builder.Configuration.GetSection(nameof(BitstampConfiguration)).Get<BitstampConfiguration>());
+builder.Services.AddBitfinexHttpClient(builder.Configuration.GetSection(nameof(BitfinexConfiguration)).Get<BitfinexConfiguration>());
 
 // Register services and repositories 
 builder.Services.AddScoped<IPriceService, PriceService>();

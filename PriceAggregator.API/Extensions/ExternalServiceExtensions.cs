@@ -1,10 +1,11 @@
 using PriceAggregator.API.Configurations;
 using PriceAggregator.API.Services;
+using PriceAggregator.API.Services.External.Bitfinex;
 using PriceAggregator.API.Services.External.Bitstamp;
 
 namespace PriceAggregator.API.Extensions;
 
-public static class BitstampServiceExtensions
+public static class ExternalServiceExtensions
 {
     public static IServiceCollection AddBitstampHttpClient(
         this IServiceCollection services,
@@ -15,6 +16,20 @@ public static class BitstampServiceExtensions
             services
                 .AddHttpClient<IPriceSource, BitstampService>(client =>
                     client.BaseAddress = bitstampConfiguration.BaseUri);
+        }
+
+        return services;
+    }
+    
+    public static IServiceCollection AddBitfinexHttpClient(
+        this IServiceCollection services,
+        BitfinexConfiguration? bitfinexConfiguration)
+    {
+        if (bitfinexConfiguration?.IsEnabled == true)
+        {
+            services
+                .AddHttpClient<IPriceSource, BitfinexService>(client =>
+                    client.BaseAddress = bitfinexConfiguration.BaseUri);
         }
 
         return services;

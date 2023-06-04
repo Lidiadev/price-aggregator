@@ -35,8 +35,8 @@ public class BitstampService : IPriceSource
                 
             var apiResponse = JsonSerializer.Deserialize<BitstampResponse>(await response.Content.ReadAsStringAsync());
 
-            return apiResponse is { Data: { Ohlc.Count: > 0 } }
-                ? PriceSourceResponse.Success(apiResponse.Data.Ohlc.FirstOrDefault().Close) 
+            return apiResponse is { Data: { Candles.Count: > 0 } }
+                ? PriceSourceResponse.Success(apiResponse.Data.Candles.FirstOrDefault().Close) 
                 : PriceSourceResponse.Failure();
         }
         catch (Exception ex)

@@ -6,5 +6,5 @@ namespace PriceAggregator.API.Services.External.Bitstamp;
 public class BitstampResponse
 {
     [DataMember(Name = "data")]
-    public BitstampData Data { get; set; }
+    public CandleResponse Data { get; set; }
 }
