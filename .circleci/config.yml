@@ -6,7 +6,6 @@ version: 2.1
 # See: https://circleci.com/docs/configuration-reference/#jobs
 jobs:
   build:
-    name: Running integration tests
     working_directory: ~/repo
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
@@ -28,7 +27,8 @@ jobs:
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  run-integration_tests:
+  run_integration_tests:
+    name: Running integration tests 
     jobs:
       - build
       
