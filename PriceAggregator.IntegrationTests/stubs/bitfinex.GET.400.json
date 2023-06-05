@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/v2/candles/trade:1h:tBTCUSD/hist?start=1675238400000&end=1675242000000&limit=1"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    }
+  }
+}

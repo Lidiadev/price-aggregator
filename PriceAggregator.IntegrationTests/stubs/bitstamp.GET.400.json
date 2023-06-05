@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/v2/ohlc/btcusd?step=3600&limit=1&start=1675238400"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    }
+  }
+}
