@@ -19,10 +19,14 @@ with hour accuracy.
 
 
 ## Testing
-The microservice has integration tests which are run by CircleCI every time a commit is 
-pushed to the main branch.
+CircleCI runs integration tests for the microservice whenever a commit is pushed to the 
+main branch. 
 
-The integration tests are using a standalone WireMock stub server orchestrated by docker-compose to mock the external APIs. 
+These tests use a standalone WireMock stub server managed by docker-compose to mimic the behavior of external APIs.
+
+
+*Due to time limitations, the project does not currently have unit tests. 
+However, integrating SonarCloud would help generate code coverage reports for each Pull Request. This integration would prevent a PR from being merged if it fails to meet the required code coverage percentage.
 
 ### How to run the integration tests
 From a terminal run:
