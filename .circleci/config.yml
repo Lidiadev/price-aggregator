@@ -28,7 +28,6 @@ jobs:
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
   run_integration_tests:
-    name: Running integration tests 
     jobs:
       - build
       
