@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/api/v2/ohlc/btcusd?step=3600&limit=1&start=1672560000"
+    "url": "/api/v2/ohlc/btcusd?step=3600&limit=1&start=1672574400"
   },
   "response": {
     "status": 200,
