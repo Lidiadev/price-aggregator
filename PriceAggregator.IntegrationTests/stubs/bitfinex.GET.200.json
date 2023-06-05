@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/v2/candles/trade:1h:tBTCUSD/hist?start=1672560000000&end=1672563600000&limit=1"
+    "url": "/v2/candles/trade:1h:tBTCUSD/hist?start=1672574400000&end=1672578000000&limit=1"
   },
   "response": {
     "status": 200,
