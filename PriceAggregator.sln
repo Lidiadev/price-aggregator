@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{838949D0-6419-4983-8EE4-6A12F65661AA}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleCI", ".circleCI", "{B2B7A1C4-88C9-4FCD-8A3C-DCB28CB4A320}"

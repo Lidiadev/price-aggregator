@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/v2/ohlc/btcusd?step=3600&limit=1&start=1672560000"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    "jsonBody": {
+      "data": {
+        "ohlc": [
+          {
+            "close": "16504",
+            "high": "16521",
+            "low": "16501",
+            "open": "16517",
+            "timestamp": "1672560000",
+            "volume": "24.90364620"
+          }
+        ],
+        "pair": "BTC/USD"
+      }
+    }
+  }
+}

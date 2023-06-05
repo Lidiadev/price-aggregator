@@ -1,3 +1,4 @@
+### Overview
 Price Aggregator is a a micro-service for aggregation, retrieval & caching of financial
 instruments prices.
 
@@ -10,13 +11,13 @@ with hour accuracy.
 - an API Endpoint that fetches the persisted instrument prices from the datastore
   during a user-specified time range 
 
-#### Technical details
+### Technical details
 - .NET 7.0
 - In-memory DB
 - RESTful API
 
-#### How to run
+### How to run
 
-#### Testing
+### Testing
 The micro-service has integration tests which are run by CircleCI every time a commit is 
 pushed to the main branch.
