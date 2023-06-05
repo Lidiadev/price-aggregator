@@ -17,6 +17,8 @@ with hour accuracy.
 - RESTful API
 - Circle CI
 
+## How to run the API
+From an IDE (Rider or Visual Studio), run `PriceAggregator.API`.
 
 ## Testing
 CircleCI runs integration tests for the microservice whenever a commit is pushed to the 
