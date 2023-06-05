@@ -17,7 +17,7 @@ jobs:
       - checkout
       - run:
           working_directory: ./test
-          command: find ./stubs -type f -exec curl -X POST "http://localhost:8080/__admin/mappings" --data-binary @{} \;
+          command: find ./PriceAggregator.IntegrationTests/stubs -type f -exec curl -X POST "http://localhost:8080/__admin/mappings" --data-binary @{} \;
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet test PriceAggregator.IntegrationTests/PriceAggregator.IntegrationTests.csproj
