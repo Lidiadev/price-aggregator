@@ -19,6 +19,7 @@ with hour accuracy.
 
 ## How to run the API
 From an IDE (Rider or Visual Studio), run `PriceAggregator.API`.
+The API provides Swagger UI which allows to interact with the API.
 
 ## Testing
 CircleCI runs integration tests for the microservice whenever a commit is pushed to the 
