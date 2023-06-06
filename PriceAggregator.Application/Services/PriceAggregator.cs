@@ -26,7 +26,7 @@ public class PriceAggregator : IPriceAggregator
         var prices = priceResponses
             .Where(p => p.IsSuccessful)
             .Select(p => p.Price)
-            .ToList<double>();
+            .ToList();
         
         return _aggregationStrategy.AggregatePrices(prices);
     }

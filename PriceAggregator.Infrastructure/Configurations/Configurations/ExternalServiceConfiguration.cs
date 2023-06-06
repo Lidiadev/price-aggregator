@@ -2,7 +2,7 @@ namespace PriceAggregator.Infrastructure.Configurations.Configurations;
 
 public abstract class ExternalServiceConfiguration
 {
-    public abstract string HttpClientName { get; } 
+    public abstract string ClientName { get; } 
     
     public string ServiceBaseUrl { get; set; }
 

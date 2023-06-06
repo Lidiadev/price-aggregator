@@ -15,7 +15,7 @@ public static class ExternalServiceExtensions
         if (bitstampConfiguration?.IsEnabled == true)
         {
             services
-                .AddHttpClient<IPriceSource, BitstampService>(bitstampConfiguration.HttpClientName, client =>
+                .AddHttpClient<IPriceSource, BitstampService>(bitstampConfiguration.ClientName, client =>
                     client.BaseAddress = bitstampConfiguration.BaseUri);
         }
 
@@ -29,7 +29,7 @@ public static class ExternalServiceExtensions
         if (bitfinexConfiguration?.IsEnabled == true)
         {
             services
-                .AddHttpClient<IPriceSource, BitfinexService>(bitfinexConfiguration.HttpClientName, client =>
+                .AddHttpClient<IPriceSource, BitfinexService>(bitfinexConfiguration.ClientName, client =>
                     client.BaseAddress = bitfinexConfiguration.BaseUri);
         }
 
