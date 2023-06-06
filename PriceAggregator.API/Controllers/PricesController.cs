@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
 using PriceAggregator.Application.Dto;
@@ -20,7 +21,10 @@ public class PricesController : ControllerBase
     }
 
     [HttpGet("{instrument}/{time:datetime}")]
-    public async Task<ActionResult<double>> GetAggregatedPrice(string instrument, DateTime time)
+    [ProducesResponseType(typeof(double), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+    public async Task<ActionResult<double>> GetAggregatedPrice([DefaultValue("btcusd")]string instrument, [DefaultValue("2023-06-02T10:00:00")]DateTime time)
     {
         try
         {
@@ -41,10 +45,13 @@ public class PricesController : ControllerBase
     }
     
     [HttpGet("persisted/{instrument}")]
+    [ProducesResponseType(typeof(List<AggregatedPriceModel>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
     public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(
-        string instrument, 
-        [Required] DateTime startTime, 
-        [Required] DateTime endTime)
+        [DefaultValue("btcusd")] string instrument, 
+        [Required] [DefaultValue("2023-06-02T10:00:00")] DateTime startTime, 
+        [Required] [DefaultValue("2023-06-03T10:00:00")] DateTime endTime)
     {
         try
         {
