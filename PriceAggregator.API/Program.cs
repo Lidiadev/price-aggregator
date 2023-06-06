@@ -1,8 +1,9 @@
-﻿using PriceAggregator.API.Services;
-using Microsoft.EntityFrameworkCore;
-using PriceAggregator.API.Configurations;
-using PriceAggregator.API.Extensions;
-using PriceAggregator.API.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using PriceAggregator.Application.Services;
+using PriceAggregator.Domain.Repository;
+using PriceAggregator.Infrastructure.Configurations.Configurations;
+using PriceAggregator.Infrastructure.Extensions;
+using PriceAggregator.Infrastructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +24,7 @@ builder.Services.AddBitfinexHttpClient(builder.Configuration.GetSection(nameof(B
 
 // Register services and repositories 
 builder.Services.AddScoped<IPriceService, PriceService>();
-builder.Services.AddScoped<IPriceAggregator, PriceAggregator.API.Services.PriceAggregator>();
+builder.Services.AddScoped<IPriceAggregator, PriceAggregator.Application.Services.PriceAggregator>();
 builder.Services.AddScoped<IPriceRepository, PriceRepository>();
 builder.Services.AddScoped<IPriceAggregationStrategy, PriceAverageAggregationStrategy>();
 

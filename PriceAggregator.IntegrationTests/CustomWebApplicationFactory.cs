@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PriceAggregator.API.Repository;
+using PriceAggregator.Infrastructure.Repository;
 
 namespace PriceAggregator.IntegrationTests;
 

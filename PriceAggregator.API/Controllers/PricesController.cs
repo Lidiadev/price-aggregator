@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net;
 using Microsoft.AspNetCore.Mvc;
-using PriceAggregator.API.Models;
-using PriceAggregator.API.Services;
+using PriceAggregator.Application.Dto;
+using PriceAggregator.Application.Services;
 
 namespace PriceAggregator.API.Controllers;
 

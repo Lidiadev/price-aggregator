@@ -23,5 +23,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PriceAggregator.Application\PriceAggregator.Application.csproj" />
+    <ProjectReference Include="..\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>

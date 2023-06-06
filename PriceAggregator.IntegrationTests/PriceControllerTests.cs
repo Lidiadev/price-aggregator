@@ -3,8 +3,8 @@
     using Microsoft.AspNetCore.Mvc.Testing;
     using Microsoft.Extensions.DependencyInjection;
     using Newtonsoft.Json;
-    using PriceAggregator.API.Models;
-    using PriceAggregator.API.Repository;
+    using PriceAggregator.Application.Dto;
+    using PriceAggregator.Infrastructure.Repository;
 
     namespace PriceAggregator.IntegrationTests;
 
@@ -17,15 +17,17 @@
             _factory = factory;
         }
         
-        [Fact]
-        public async Task GivenTheRequestIsValid_WhenGettingTheAggregatedPrice_ThenItShouldReturnThePrice()
+        [Theory]
+        [InlineData("btcusd")]
+        [InlineData("BTCUSD")]
+        public async Task GivenTheRequestIsValid_WhenGettingTheAggregatedPrice_ThenItShouldReturnThePrice(string symbol)
         {
             // Arrange
             var client = _factory.CreateClient();
             var time = new DateTime(2023, 1, 1, 12, 14, 15);
    
             // Act
-            var response = await client.GetAsync($"/api/v1/prices/btcusd/{time:yyyy-MM-ddTHH:mm:ss}");
+            var response = await client.GetAsync($"/api/v1/prices/{symbol}/{time:yyyy-MM-ddTHH:mm:ss}");
 
             // Assert
             response.EnsureSuccessStatusCode();
