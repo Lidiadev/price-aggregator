@@ -15,12 +15,6 @@ public class FinancialInstrument : ValueObject
 
         Symbol = symbol.ToLower();
     }
-    
-    public static FinancialInstrument White => new("#FFFFFF");
-
-    public static FinancialInstrument Red => new("#FF5733");
-
-    public static FinancialInstrument Orange => new("#FFC300");
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
