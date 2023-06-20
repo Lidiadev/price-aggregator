@@ -25,6 +25,7 @@ jobs:
       - run: dotnet test PriceAggregator.IntegrationTests/PriceAggregator.IntegrationTests.csproj -v n
       - run: dotnet test PriceAggregator.API.UnitTests/PriceAggregator.API.UnitTests.csproj -v n
       - run: dotnet test PriceAggregator.Application.Services.UnitTests/PriceAggregator.Application.Services.UnitTests.csproj -v n
+      - run: dotnet test PriceAggregator.Domain.UnitTests/PriceAggregator.Domain.UnitTests.csproj -v n
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows

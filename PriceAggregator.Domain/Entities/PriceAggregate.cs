@@ -16,7 +16,7 @@ public class PriceAggregate
 
     public PriceAggregate(string instrument, DateTime time, double price)
     {
-        Instrument = new FinancialInstrument(instrument);
+        Instrument = FinancialInstrument.From(instrument);
         Time = time;
         Price = price;
     }

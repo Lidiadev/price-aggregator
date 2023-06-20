@@ -5,15 +5,20 @@ namespace PriceAggregator.Domain.ValueObjects;
 public class FinancialInstrument : ValueObject
 {
     public string Symbol { get; }
-    
-    private FinancialInstrument() { }
 
-    public FinancialInstrument(string symbol)
+    private FinancialInstrument() { }
+    
+    private FinancialInstrument(string symbol)
+    {
+        Symbol = symbol.ToLower();
+    }
+
+    public static FinancialInstrument From(string symbol)
     {
         if (string.IsNullOrWhiteSpace(symbol))
             throw new ArgumentException("The financial instrument symbol must be provided.", nameof(symbol));
 
-        Symbol = symbol.ToLower();
+        return new FinancialInstrument(symbol);
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
