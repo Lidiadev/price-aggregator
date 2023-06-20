@@ -33,13 +33,13 @@ The solution is configured to use an in-memory database. The solution can be run
 to set up any additional infrastructure.
 
 ## Testing
-CircleCI runs integration tests for the microservice whenever a commit is pushed to the 
+CircleCI runs the unit and integration tests for the microservice whenever a commit is pushed to the 
 main branch. 
 
 These tests use a standalone WireMock stub server managed by docker-compose to mimic the behavior of external APIs.
 
 
-*Due to time limitations, the project does not currently have unit tests. 
+*Due to time limitations, the project does not currently have a high unit tests coverage. 
 However, integrating SonarCloud would help generate code coverage reports for each Pull Request. This integration would prevent a PR from being merged if it fails to meet the required code coverage percentage.
 
 ### How to run the integration tests
