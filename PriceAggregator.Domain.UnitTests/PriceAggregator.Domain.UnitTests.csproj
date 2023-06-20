@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\PriceAggregator.Domain\PriceAggregator.Domain.csproj" />
+      <ProjectReference Include="..\PriceAggregator.Domain\PriceAggregator.Domain.csproj" />
     </ItemGroup>
 
 </Project>

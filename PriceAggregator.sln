@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API.UnitTests", "PriceAggregator.API.UnitTests\PriceAggregator.API.UnitTests.csproj", "{68FB749C-0825-4CD9-89DC-8A323CA14B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain.UnitTests", "tests\PriceAggregator.Domain.UnitTests\PriceAggregator.Domain.UnitTests.csproj", "{8D71C5AB-D093-457A-9E83-8A66559D764B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain.UnitTests", "PriceAggregator.Domain.UnitTests\PriceAggregator.Domain.UnitTests.csproj", "{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,10 +66,10 @@ Global
 		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D71C5AB-D093-457A-9E83-8A66559D764B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D71C5AB-D093-457A-9E83-8A66559D764B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D71C5AB-D093-457A-9E83-8A66559D764B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D71C5AB-D093-457A-9E83-8A66559D764B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +82,6 @@ Global
 		{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
 		{96A53BDA-BDA3-46D0-A953-E0A255F6AA77} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
 		{68FB749C-0825-4CD9-89DC-8A323CA14B8F} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
-		{8D71C5AB-D093-457A-9E83-8A66559D764B} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
+		{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
 	EndGlobalSection
 EndGlobal
