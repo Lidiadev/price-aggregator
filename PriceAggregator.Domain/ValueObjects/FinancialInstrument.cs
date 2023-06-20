@@ -22,4 +22,14 @@ public class FinancialInstrument : ValueObject
     }
 
     public override int GetHashCode() => Symbol.GetHashCode();
+    
+    public static bool operator ==(FinancialInstrument instrument, string symbol)
+    {
+        return instrument.Symbol == symbol;
+    }
+
+    public static bool operator !=(FinancialInstrument instrument, string symbol)
+    {
+        return !(instrument == symbol);
+    }
 }

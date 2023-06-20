@@ -30,8 +30,7 @@ public class BitfinexService : IPriceSource
     {
         try
         {
-            var response = await _httpClient.GetAsync(
-                    _bitfinexConfiguration.InstrumentPriceEndpointUri(instrument, Step, Limit, time));
+            var response = await _httpClient.GetAsync(_bitfinexConfiguration.InstrumentPriceEndpointUri(instrument, Step, Limit, time));
             response.EnsureSuccessStatusCode();
 
             var apiResponse = JsonSerializer.Deserialize<List<List<object>>>(await response.Content.ReadAsStringAsync());
