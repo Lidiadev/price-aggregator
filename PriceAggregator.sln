@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7EBD42F4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application.Services.UnitTests", "PriceAggregator.Application.Services.UnitTests\PriceAggregator.Application.Services.UnitTests.csproj", "{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API.UnitTests", "PriceAggregator.API.UnitTests\PriceAggregator.API.UnitTests.csproj", "{68FB749C-0825-4CD9-89DC-8A323CA14B8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FB749C-0825-4CD9-89DC-8A323CA14B8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,5 +75,6 @@ Global
 		{B2B7A1C4-88C9-4FCD-8A3C-DCB28CB4A320} = {838949D0-6419-4983-8EE4-6A12F65661AA}
 		{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
 		{96A53BDA-BDA3-46D0-A953-E0A255F6AA77} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
+		{68FB749C-0825-4CD9-89DC-8A323CA14B8F} = {7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}
 	EndGlobalSection
 EndGlobal

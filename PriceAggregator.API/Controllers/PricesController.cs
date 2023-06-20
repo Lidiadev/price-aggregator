@@ -24,7 +24,7 @@ public class PricesController : ControllerBase
     [ProducesResponseType(typeof(double), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    public async Task<ActionResult<double>> GetAggregatedPrice([DefaultValue("btcusd")]string instrument, [DefaultValue("2023-06-02T10:00:00")]DateTime time)
+    public async Task<IActionResult> GetAggregatedPrice([DefaultValue("btcusd")]string instrument, [DefaultValue("2023-06-02T10:00:00")]DateTime time)
     {
         try
         {
@@ -35,7 +35,7 @@ public class PricesController : ControllerBase
             
             var aggregatedPrice = await _priceService.GetAggregatedPrice(instrument, time);
 
-            return aggregatedPrice.AggregatedPrice;
+            return Ok(aggregatedPrice.AggregatedPrice);
         }
         catch (Exception ex)
         {
@@ -48,7 +48,7 @@ public class PricesController : ControllerBase
     [ProducesResponseType(typeof(List<AggregatedPriceModel>), (int)HttpStatusCode.OK)]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-    public async Task<ActionResult<List<AggregatedPriceModel>>> GetPersistedPrices(
+    public async Task<IActionResult> GetPersistedPrices(
         [DefaultValue("btcusd")] string instrument, 
         [Required] [DefaultValue("2023-06-02T10:00:00")] DateTime startTime, 
         [Required] [DefaultValue("2023-06-03T10:00:00")] DateTime endTime)
@@ -60,7 +60,7 @@ public class PricesController : ControllerBase
                 return BadRequest(ModelState);
             }
             
-            return await _priceService.GetPersistedPrices(instrument, startTime, endTime);
+            return Ok(await _priceService.GetPersistedPrices(instrument, startTime, endTime));
         }
         catch (Exception ex)
         {
