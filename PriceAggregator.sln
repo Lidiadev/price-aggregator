@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application.Services.UnitTests", "PriceAggregator.Application.Services.UnitTests\PriceAggregator.Application.Services.UnitTests.csproj", "{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application.UnitTests", "PriceAggregator.Application.UnitTests\PriceAggregator.Application.UnitTests.csproj", "{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API.UnitTests", "PriceAggregator.API.UnitTests\PriceAggregator.API.UnitTests.csproj", "{68FB749C-0825-4CD9-89DC-8A323CA14B8F}"
 EndProject
