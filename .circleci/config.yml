@@ -18,6 +18,7 @@ jobs:
       - checkout
       - run:
           name: Setup Mocks
+          working_directory: ./PriceAggregator.IntegrationTests
           command: find ./stubs -type f -exec curl -X POST "http://localhost:8080/__admin/mappings" --data-binary @{} \;
       - run: dotnet restore
       - run: dotnet build
