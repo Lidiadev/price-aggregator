@@ -5,7 +5,7 @@ VisualStudioVersion = 25.0.1705.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API", "src\PriceAggregator.API\PriceAggregator.API.csproj", "{7A79D46D-9C09-43F9-BEB1-2BC6DFE3DE52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.IntegrationTests", "PriceAggregator.IntegrationTests\PriceAggregator.IntegrationTests.csproj", "{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.IntegrationTests", "tests\PriceAggregator.IntegrationTests\PriceAggregator.IntegrationTests.csproj", "{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{838949D0-6419-4983-8EE4-6A12F65661AA}"
 	ProjectSection(SolutionItems) = preProject

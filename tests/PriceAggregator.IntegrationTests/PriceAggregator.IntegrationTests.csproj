@@ -27,8 +27,8 @@
     </ItemGroup>
     
     <ItemGroup>
-      <ProjectReference Include="..\src\PriceAggregator.API\PriceAggregator.API.csproj" />
-      <ProjectReference Include="..\src\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj" />
+      <ProjectReference Include="..\..\src\PriceAggregator.API\PriceAggregator.API.csproj" />
+      <ProjectReference Include="..\..\src\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

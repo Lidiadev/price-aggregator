@@ -6,4 +6,4 @@ services:
     ports:
       - "${API_MOCK_PORT-8080}:8080"
     volumes:
-      - "./PriceAggregator.IntegrationTests/stubs:/home/wiremock/mappings"
+      - "./tests/PriceAggregator.IntegrationTests/stubs:/home/wiremock/mappings"
