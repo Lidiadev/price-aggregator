@@ -25,9 +25,10 @@
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
-
+    
     <ItemGroup>
-      <ProjectReference Include="..\PriceAggregator.API\PriceAggregator.API.csproj" />
+      <ProjectReference Include="..\src\PriceAggregator.API\PriceAggregator.API.csproj" />
+      <ProjectReference Include="..\src\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

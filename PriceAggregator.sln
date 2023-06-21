@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1705.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API", "PriceAggregator.API\PriceAggregator.API.csproj", "{7A79D46D-9C09-43F9-BEB1-2BC6DFE3DE52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API", "src\PriceAggregator.API\PriceAggregator.API.csproj", "{7A79D46D-9C09-43F9-BEB1-2BC6DFE3DE52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.IntegrationTests", "PriceAggregator.IntegrationTests\PriceAggregator.IntegrationTests.csproj", "{D5FA2B7A-BEE2-42E3-9C40-C10CDB987C9A}"
 EndProject
@@ -18,21 +18,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".circleCI", ".circleCI", "{
 		.circleci\config.yml = .circleci\config.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain", "PriceAggregator.Domain\PriceAggregator.Domain.csproj", "{CA0C6E5A-E07F-46A9-9AD9-D8FC291DE099}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain", "src\PriceAggregator.Domain\PriceAggregator.Domain.csproj", "{CA0C6E5A-E07F-46A9-9AD9-D8FC291DE099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Infrastructure", "PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj", "{96EF2987-59AB-4DD7-9E75-5D6D466A3659}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Infrastructure", "src\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj", "{96EF2987-59AB-4DD7-9E75-5D6D466A3659}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application", "PriceAggregator.Application\PriceAggregator.Application.csproj", "{5E1E869C-792F-4633-83A4-D72FEC8569D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application", "src\PriceAggregator.Application\PriceAggregator.Application.csproj", "{5E1E869C-792F-4633-83A4-D72FEC8569D9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7EBD42F4-A0F4-482F-90BC-A07A6FFDAA87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application.UnitTests", "PriceAggregator.Application.UnitTests\PriceAggregator.Application.UnitTests.csproj", "{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Application.UnitTests", "tests\PriceAggregator.Application.UnitTests\PriceAggregator.Application.UnitTests.csproj", "{96A53BDA-BDA3-46D0-A953-E0A255F6AA77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API.UnitTests", "PriceAggregator.API.UnitTests\PriceAggregator.API.UnitTests.csproj", "{68FB749C-0825-4CD9-89DC-8A323CA14B8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.API.UnitTests", "tests\PriceAggregator.API.UnitTests\PriceAggregator.API.UnitTests.csproj", "{68FB749C-0825-4CD9-89DC-8A323CA14B8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain.UnitTests", "PriceAggregator.Domain.UnitTests\PriceAggregator.Domain.UnitTests.csproj", "{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Domain.UnitTests", "tests\PriceAggregator.Domain.UnitTests\PriceAggregator.Domain.UnitTests.csproj", "{D81F66B1-E170-49E0-8D89-D9F2CEDF3DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Infrastructure.UnitTests", "PriceAggregator.Infrastructure.UnitTests\PriceAggregator.Infrastructure.UnitTests.csproj", "{C808EC90-D3C9-4680-A9E6-C94B660F9340}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceAggregator.Infrastructure.UnitTests", "tests\PriceAggregator.Infrastructure.UnitTests\PriceAggregator.Infrastructure.UnitTests.csproj", "{C808EC90-D3C9-4680-A9E6-C94B660F9340}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

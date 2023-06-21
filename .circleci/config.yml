@@ -23,10 +23,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build
       - run: dotnet test PriceAggregator.IntegrationTests/PriceAggregator.IntegrationTests.csproj -v n
-      - run: dotnet test PriceAggregator.API.UnitTests/PriceAggregator.API.UnitTests.csproj -v n
-      - run: dotnet test PriceAggregator.Application.UnitTests/PriceAggregator.Application.UnitTests.csproj -v n
-      - run: dotnet test PriceAggregator.Domain.UnitTests/PriceAggregator.Domain.UnitTests.csproj -v n
-      - run: dotnet test PriceAggregator.Infrastructure.UnitTests/PriceAggregator.Infrastructure.UnitTests.csproj -v n
+      - run: dotnet test ./tests -v n
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
