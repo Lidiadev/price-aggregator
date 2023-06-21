@@ -1,8 +1,7 @@
-
-using PriceAggregator.Infrastructure.Extensions;
+using PriceAggregator.Application.Extensions;
 using PriceAggregator.Infrastructure.Mappings;
 
-namespace PriceAggregator.Infrastructure.Configurations.Configurations;
+namespace PriceAggregator.Infrastructure.Configurations;
 
 public class BitfinexConfiguration : ExternalServiceConfiguration
 {

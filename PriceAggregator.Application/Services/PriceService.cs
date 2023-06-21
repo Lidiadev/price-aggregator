@@ -1,8 +1,8 @@
+using PriceAggregator.Application.Aggregators;
 using PriceAggregator.Application.Dto;
+using PriceAggregator.Application.Extensions;
 using PriceAggregator.Domain.Entities;
 using PriceAggregator.Domain.Repository;
-using PriceAggregator.Infrastructure.Extensions;
-using PriceAggregator.Infrastructure.ExternalDependencies;
 
 namespace PriceAggregator.Application.Services;
 

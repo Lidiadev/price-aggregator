@@ -1,4 +1,5 @@
-using PriceAggregator.Infrastructure.ExternalDependencies;
+using PriceAggregator.Application.Aggregators;
+using PriceAggregator.Application.Dto;
 
 namespace PriceAggregator.Application.Services;
 

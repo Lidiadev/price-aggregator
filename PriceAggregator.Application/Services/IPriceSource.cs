@@ -1,4 +1,6 @@
-namespace PriceAggregator.Infrastructure.ExternalDependencies;
+using PriceAggregator.Application.Dto;
+
+namespace PriceAggregator.Application.Services;
 
 public interface IPriceSource
 {

@@ -1,9 +1,9 @@
 using FluentAssertions;
 using Moq;
+using PriceAggregator.Application.Aggregators;
 using PriceAggregator.Application.Dto;
 using PriceAggregator.Domain.Entities;
 using PriceAggregator.Domain.Repository;
-using PriceAggregator.Infrastructure.ExternalDependencies;
 
 namespace PriceAggregator.Application.Services.UnitTests.Services;
 

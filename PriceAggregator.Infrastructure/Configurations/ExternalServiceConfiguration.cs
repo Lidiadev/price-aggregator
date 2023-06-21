@@ -1,4 +1,4 @@
-namespace PriceAggregator.Infrastructure.Configurations.Configurations;
+namespace PriceAggregator.Infrastructure.Configurations;
 
 public abstract class ExternalServiceConfiguration
 {

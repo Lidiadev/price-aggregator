@@ -1,4 +1,4 @@
-namespace PriceAggregator.Infrastructure.ExternalDependencies;
+namespace PriceAggregator.Application.Dto;
 
 public class PriceSourceResponse
 {

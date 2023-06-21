@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PriceAggregator.Application.Aggregators;
 using PriceAggregator.Application.Services;
 using PriceAggregator.Domain.Repository;
-using PriceAggregator.Infrastructure.Configurations.Configurations;
+using PriceAggregator.Infrastructure.Configurations;
 using PriceAggregator.Infrastructure.Extensions;
 using PriceAggregator.Infrastructure.Repository;
 

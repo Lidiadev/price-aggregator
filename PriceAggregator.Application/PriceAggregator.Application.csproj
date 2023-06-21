@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\PriceAggregator.Infrastructure\PriceAggregator.Infrastructure.csproj" />
+      <ProjectReference Include="..\PriceAggregator.Domain\PriceAggregator.Domain.csproj" />
     </ItemGroup>
 
 </Project>

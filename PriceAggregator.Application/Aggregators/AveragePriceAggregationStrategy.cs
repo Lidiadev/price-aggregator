@@ -1,4 +1,4 @@
-namespace PriceAggregator.Application.Services;
+namespace PriceAggregator.Application.Aggregators;
 
 public class PriceAverageAggregationStrategy : IPriceAggregationStrategy
 {

@@ -2,7 +2,9 @@ using System.Text.Json;
 using EnsureThat;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using PriceAggregator.Infrastructure.Configurations.Configurations;
+using PriceAggregator.Application.Dto;
+using PriceAggregator.Application.Services;
+using PriceAggregator.Infrastructure.Configurations;
 
 namespace PriceAggregator.Infrastructure.ExternalDependencies.Bitstamp;
 

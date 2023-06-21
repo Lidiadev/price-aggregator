@@ -1,4 +1,4 @@
-namespace PriceAggregator.Infrastructure.Extensions;
+namespace PriceAggregator.Application.Extensions;
 
 public static class TimeExtensions
 {

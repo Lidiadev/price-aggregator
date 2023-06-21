@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using PriceAggregator.Infrastructure.Configurations.Configurations;
-using PriceAggregator.Infrastructure.ExternalDependencies;
+using PriceAggregator.Application.Services;
+using PriceAggregator.Infrastructure.Configurations;
 using PriceAggregator.Infrastructure.ExternalDependencies.Bitfinex;
 using PriceAggregator.Infrastructure.ExternalDependencies.Bitstamp;
 

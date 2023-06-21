@@ -1,6 +1,6 @@
-using PriceAggregator.Infrastructure.ExternalDependencies;
+using PriceAggregator.Application.Services;
 
-namespace PriceAggregator.Application.Services;
+namespace PriceAggregator.Application.Aggregators;
 
 public interface IPriceAggregator
 {
